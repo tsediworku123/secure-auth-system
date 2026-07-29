@@ -1,0 +1,15 @@
+USE secure_auth_db;
+
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) NOT NULL UNIQUE,
+    password_hash VARCHAR(255) NOT NULL,
+    is_verified BOOLEAN DEFAULT FALSE,
+    reset_token VARCHAR(255) DEFAULT NULL,
+    reset_token_expires DATETIME DEFAULT NULL,
+    refresh_token TEXT DEFAULT NULL,
+    auth_provider VARCHAR(50) DEFAULT 'local',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
+);

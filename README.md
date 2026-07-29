@@ -182,18 +182,3 @@ Generate strong random strings for production:
 ```bash
 node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 ```
-
-## ⚠️ Important Notes
-
-- **Never commit `.env` files** - They contain sensitive credentials
-- **Change default JWT secrets** in production
-- **Use HTTPS** in production (set `secure: true` in cookie options)
-- **Set `NODE_ENV=production`** for production deployments
-
-## 📄 License
-
-This project is for educational purposes.
-
-## 👨‍💻 Author
-
-Created as a secure authentication system implementation demonstrating industry best practices.
